@@ -5,20 +5,32 @@
  */
 package tablelamp;
 
-import lightbulbs.LightBulb;
-import buttons.Button;
+import lightbulbs.*;
+import buttons.*;
 
 /**
  *
  * @author adeeb
  */
 public class TableLamp {
-    Button b;
+    IButton b;
     LightBulb l;
     
-    public TableLamp(Button b, LightBulb l) {
+    public TableLamp(IButton b, LightBulb l) {
         this.b = b;
         this.l = l;
+    }
+    
+    public void turnTableLampOn(){
+        b.switchOn();
+        l.turnLightBulbOn();
+        System.out.println("Table lamp has been turned ON.");
+    }
+    
+    public void turnTableLampOff(){
+        b.switchOff();
+        l.turnLightBulbOff();
+        System.out.println("Table lamp has been turned OFF.");
     }
     
     /**
@@ -26,11 +38,27 @@ public class TableLamp {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Button testButton = new Button();
-        
+        /*Button testButton = new Button();
         testButton.switchOn();
+        testButton.switchOff();*/
         
-        testButton.switchOff();
+        Button b = new Button();
+        LightBulb l = new LightBulb();
+        TableLamp tl = new TableLamp(b,l);
+        
+        tl.turnTableLampOn();
+        System.out.println("");
+        tl.turnTableLampOff();
+        
+        System.out.println("");
+        System.out.println("");
+        PushButton pb = new PushButton();
+        LightBulb pl = new LightBulb();
+        TableLamp ptl = new TableLamp(pb,pl);
+        
+        ptl.turnTableLampOn();
+        System.out.println("");
+        ptl.turnTableLampOff();
 
     }
 }

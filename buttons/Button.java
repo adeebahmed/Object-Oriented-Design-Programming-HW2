@@ -5,14 +5,12 @@
  */
 package buttons;
 
-import lightbulbs.LightBulb;
-
 /**
  *
  * @author adeeb
  */
-public class Button {
-    LightBulb l = new LightBulb(); //true == on, false == off
+public class Button implements IButton{
+    //ILightBulb l; //true == on, false == off
 
     //default constructor
     public Button() {
@@ -21,11 +19,11 @@ public class Button {
     
     public void switchOn() {
         System.out.println("Button switched ON.");
-        l.turnLightBulbOn();
+        //this.l.turnLightBulbOn();
     }
 
     public void switchOff() {
         System.out.println("Button switched OFF.");
-        l.turnLightBulbOff();
+        //this.l.turnLightBulbOff();
     }
 }

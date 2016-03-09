@@ -9,7 +9,7 @@ package lightbulbs;
  *
  * @author adeeb
  */
-public class LightBulb {
+public class LightBulb implements ILightBlub{
     boolean lightBulbState; //true == on, false == off
 
     public LightBulb() {
@@ -17,12 +17,12 @@ public class LightBulb {
     }
 
     public void turnLightBulbOn() {
-        lightBulbState = true;
+        this.lightBulbState = true;
         System.out.println("LightBulb switched ON.");
     }
 
      public void turnLightBulbOff() {
-         lightBulbState = false;
+        this.lightBulbState = false;
         System.out.println("LightBulb switched OFF.");
     }
 }
